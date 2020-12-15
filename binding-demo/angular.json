@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "binding-demo"
+  "defaultProject": "binding-demo",
+  "cli": {
+    "analytics": "7c6ae636-3072-425b-bb01-b64ee9024d90"
+  }
 }
