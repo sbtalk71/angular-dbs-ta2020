@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   <div [hidden]="isHidden">  
   <h2>List of names</h2>
     <ul>
-    <li *ngFor="let name of names">{{name}}</li>
+    <li *ngFor="let name of names" (click)="selectName(name)">{{name}}</li>
     </ul>
+    <h3>You Clicked on {{selectedName}}</h3>
     </div>
     <div>
     <button (click)="toggleDisplay()">{{label}}</button>
@@ -21,6 +22,7 @@ export class NgforComponent implements OnInit {
 
   public isHidden=false;
   public label:string="Hide"
+  public selectedName:string="";
   public names:string[]=["Rakesh","Mukesh","Anil","Chandra","Ranga","Pretham","Raja"];
   constructor() { }
 
@@ -35,5 +37,9 @@ public toggleDisplay(){
     this.isHidden=true;
     this.label="Show";
   }
+}
+
+public selectName(data:string){
+  this.selectedName=data;
 }
 }

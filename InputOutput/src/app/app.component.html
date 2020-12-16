@@ -1,0 +1,6 @@
+<h1>Parent Component</h1>
+<h2>Child 1 date Received : {{messageFromChild}}</h2>
+<h2>Child 2 date Received : {{messageFromChild2}}</h2>
+<hr>
+<app-child [parentData]="parentName" (child1Event)="messageFromChild=$event" ></app-child>
+<app-child2 [parentData]="parentName" (child2Event)="messageFromChild2=$event" ></app-child2>
