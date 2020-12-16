@@ -3,20 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BindingsComponent } from './bindings/bindings.component';
-import { TwoWayComponent } from './two-way/two-way.component';
-import { FormsModule } from '@angular/forms';
+import { NgforComponent } from './ngfor/ngfor.component';
+import { NgifComponent } from './ngif/ngif.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BindingsComponent,
-    TwoWayComponent
+    NgforComponent,
+    NgifComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
