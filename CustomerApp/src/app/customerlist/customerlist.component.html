@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<table>
+    <tr *ngFor="let cust of customerList" (click)="getCustomer(cust.customerId)">
+        <td>{{cust.customerId}}</td>
+        <td>{{cust.customerName}}</td>
+    </tr>
+</table>
+<div *ngIf="foundCust!=undefined">
+    <h2>{{foundCust.customerName}}</h2>
+</div>
+
+<hr>
+<h3>Ticker : {{time|async|date:'short'}}</h3>
+<h3>Ticker : {{time1}}</h3>
