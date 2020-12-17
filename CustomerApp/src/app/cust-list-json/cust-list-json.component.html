@@ -1,1 +1,10 @@
-<p>cust-list-json works!</p>
+<h1>{{title}}</h1>
+<table>
+    <tr *ngFor="let cust of customerList" (click)="getCustomer(cust.customerId)">
+        <td>{{cust.customerId}}</td>
+        <td>{{cust.customerName}}</td>
+    </tr>
+</table>
+<div *ngIf="foundCust!=undefined">
+    <h2>{{foundCust.customerName}}</h2>
+</div>
