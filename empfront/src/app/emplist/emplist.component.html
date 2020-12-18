@@ -1,0 +1,4 @@
+<h2>Employee List Page</h2>
+<ul class="list-group">
+<li class="list-group-item" *ngFor="let emp of empList" (click)=getEmpDetails(emp.empid)>{{emp.empid}}{{emp.empName}}</li>
+</ul>

@@ -1,0 +1,23 @@
+<h1> Employee Details</h1>
+<div *ngIf="emp!=undefined">
+<table>
+    <tr>
+        <td>Employee Id</td>
+        <td>{{emp.empid}}</td>
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td>{{emp.empName}}</td>
+    </tr>
+    <tr>
+        <td>Employee City</td>
+        <td>{{emp.city}}</td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>{{emp.salary}}</td>
+    </tr>
+</table>
+</div>
+<hr>
+<a routerLink="/dashboard">Back to Employee List Page</a>
