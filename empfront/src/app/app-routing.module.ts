@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"empdetails/:id",component:EmpdetailsComponent},
   {path:"emplist",component:EmplistComponent},
   {path:"find",component:FindComponent},
+  {path:'notfound',component:NotfoundComponent},
   {path:"**",redirectTo:'emplist',pathMatch:'full'}
 ];
 

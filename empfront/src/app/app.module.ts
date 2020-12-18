@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FindComponent } from './find/find.component';
+import { MyGlobalErrorHandler } from './MyGlobalErrorHandler';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FindComponent } from './find/find.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide:ErrorHandler,useClass:MyGlobalErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
