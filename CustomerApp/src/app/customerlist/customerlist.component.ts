@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 import { customers } from '../customers';
@@ -13,7 +14,7 @@ export class CustomerlistComponent implements OnInit {
 time1:string="";
  
 time = new Observable<string>((observer: Observer<string>) => {
-    setInterval(() => observer.next(new Date().toString()), 5000);
+    setInterval(() => observer.next(new Date().toString()), 1000);
   });
   
   title="Customers List";
@@ -23,7 +24,7 @@ time = new Observable<string>((observer: Observer<string>) => {
 
   ngOnInit(): void {
     this._service.getCustomerList().subscribe(data=>this.customerList=data);
-    this.time.subscribe(data=>this.time1=data);
+    this.time.pipe(take(5)).subscribe(data=>this.time1=data);
   }
 
   public getCustomer(id:number){

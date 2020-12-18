@@ -8,12 +8,16 @@ import { CustomerService } from './customer.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomerhttpService } from './customerhttp.service';
 import { CustListJsonComponent } from './cust-list-json/cust-list-json.component';
+import { DisplaypostComponent } from './displaypost/displaypost.component';
+import { DisplayPostComponent } from './display-post/display-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerlistComponent,
-    CustListJsonComponent
+    CustListJsonComponent,
+    DisplaypostComponent,
+    DisplayPostComponent
   ],
   imports: [
     BrowserModule,

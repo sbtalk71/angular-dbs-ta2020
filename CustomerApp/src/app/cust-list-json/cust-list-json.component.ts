@@ -18,7 +18,7 @@ foundCust!:Customer;
     this._service.geCustomersFromFile().subscribe(data=>this.customerList=data);
   }
 
-  getCustomer(id:number){
-    
+ public  getCustomer(id:number){
+    this._service.findCustById(id).subscribe(data=>console.log(data));
   }
 }
