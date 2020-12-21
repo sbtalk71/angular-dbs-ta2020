@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { EmpService } from '../emp.service';
 import { IEmp } from '../iemp';
 
@@ -11,18 +11,18 @@ import { IEmp } from '../iemp';
 export class EmpdetailsComponent implements OnInit {
 
   emp!: IEmp;
-  constructor(private _service: EmpService, private activeRoute: ActivatedRoute,private router:Router ) { }
+  constructor(private _service: EmpService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     let empId = parseInt(this.activeRoute.snapshot.params.id);
+
     this._service.getEmp(empId).subscribe(
       data => this.emp = data,
-      error=> {
-              console.log(error);
-              this.router.navigate(["notfound"]);
-                          
-              }
-      );
-  }
+      error => {
+        console.log(error);
+        this.router.navigate(["notfound"]);
 
+      });
+  }
 }
+

@@ -10,6 +10,9 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FindComponent } from './find/find.component';
 import { MyGlobalErrorHandler } from './MyGlobalErrorHandler';
+import { AddempComponent } from './addemp/addemp.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddempReactiveComponent } from './addemp-reactive/addemp-reactive.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,16 @@ import { MyGlobalErrorHandler } from './MyGlobalErrorHandler';
     EmplistComponent,
     EmpdetailsComponent,
     NotfoundComponent,
-    FindComponent
+    FindComponent,
+    AddempComponent,
+    AddempReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide:ErrorHandler,useClass:MyGlobalErrorHandler}],
   bootstrap: [AppComponent]

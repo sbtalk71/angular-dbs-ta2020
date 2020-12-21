@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators'
 import { IEmp } from './iemp';
+import { MyMessageResponse } from './MyResponseMessage';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,9 @@ export class EmpService {
     //console.log(errorMessage);
     return throwError(errorMessage);
   }*/
+  }
+
+  public addEmp(empModel:IEmp):Observable<MyMessageResponse>{
+    return this._http.post<MyMessageResponse>(this._baseUrl+"save",empModel);
   }
 }

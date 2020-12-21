@@ -1,8 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorHandler } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 
+@Injectable(
+  {providedIn:'root'}
+)
 export class MyGlobalErrorHandler implements ErrorHandler{
-    handleError(error:HttpErrorResponse) {
+  constructor(){}
+    handleError(error:any) {
         console.log(`Error Message is ${error.message}`);
+        throw error;
       }
 }
