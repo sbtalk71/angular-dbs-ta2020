@@ -7,6 +7,7 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterStudentComponent } from './register-student/register-student.component';
+import { CourseService } from './course.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { RegisterStudentComponent } from './register-student/register-student.co
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
