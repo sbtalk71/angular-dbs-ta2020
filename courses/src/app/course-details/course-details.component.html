@@ -1,0 +1,23 @@
+<h1>Course Details</h1>
+<div *ngIf="course!=undefined">
+<button (click)="previous()">Previous</button>
+<button (click)="next()">Next</button>
+<table class="course-table">
+    <tr>
+        <td>Course ID</td>
+        <td>{{course.courseId}}</td>
+    </tr>
+    <tr>
+        <td>Slots</td>
+        <td>{{course.slots}}</td>
+    </tr>
+    <tr>
+        <td>Course Name</td>
+        <td>{{course.courseName}}</td>
+    </tr>
+    <tr>
+        <td>Duration</td>
+        <td>{{course.courseId}}</td>
+    </tr>
+</table>
+</div>

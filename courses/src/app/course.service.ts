@@ -13,4 +13,9 @@ export class CourseService {
   public getCourseList():Observable<Course[]>{
     return of(courses);
   }
+
+  public getCourse(id:number):Observable<Course>{
+    
+    return of(courses.find(course=>course.courseId==id));
+  }
 }

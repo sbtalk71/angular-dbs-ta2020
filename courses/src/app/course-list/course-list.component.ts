@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from '../course';
 import { CourseService } from '../course.service';
 
@@ -10,10 +11,13 @@ import { CourseService } from '../course.service';
 export class CourseListComponent implements OnInit {
   courseList:Course[]=[];
 
-  constructor(private _service:CourseService) { }
+  constructor(private _service:CourseService,private router:Router) { }
 
   ngOnInit(): void {
     this._service.getCourseList().subscribe(data=>this.courseList=data);
   }
 
+  public getCourseDetails(id:number){
+    this.router.navigate(["/details",id]);
+  }
 }

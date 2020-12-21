@@ -1,5 +1,5 @@
 <h1>List of Available Courses</h1>
 <ol class="courses">
-    <li *ngFor="let course of courseList"><span class="badge">{{course.courseId}}</span><span>{{course.courseName}}</span></li>
+    <li *ngFor="let course of courseList" (click)="getCourseDetails(course.courseId)"><span class="badge">{{course.courseId}}</span><span>{{course.courseName}}</span></li>
 </ol>
 
