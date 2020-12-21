@@ -13,7 +13,7 @@ courseList:Course[]=[];
   constructor(private _service:CourseService) { }
 
   ngOnInit(): void {
-    this._service.getCourseList().subscribe(data=>this.courseList=data);
+    
   }
 
 }
