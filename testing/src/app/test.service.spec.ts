@@ -5,7 +5,7 @@ import { BlogPost } from './BlogPost';
 
 import { TestService } from './test.service';
 
-fdescribe('TestService', () => {
+describe('TestService', () => {
   let service: TestService;
 
   beforeEach(() => {
