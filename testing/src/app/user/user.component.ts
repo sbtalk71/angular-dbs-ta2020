@@ -31,7 +31,7 @@ export class UserComponent implements OnInit {
 
   public onSubmit(){
     this.submitted=true;
-    console.log("Form SUbmitted");
+    console.log("Form Submitted");
   }
 
 }
