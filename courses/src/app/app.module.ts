@@ -8,6 +8,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterStudentComponent } from './register-student/register-student.component';
 import { CourseService } from './course.service';
+import { OverviewComponent } from './overview/overview.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CourseService } from './course.service';
     CourseListComponent,
     CourseDetailsComponent,
     DashboardComponent,
-    RegisterStudentComponent
+    RegisterStudentComponent,
+    OverviewComponent,
+    ContactInfoComponent
   ],
   imports: [
     BrowserModule,

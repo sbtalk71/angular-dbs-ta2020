@@ -1,23 +1,30 @@
 <h1>Course Details</h1>
+<p>
+    <button (click)="getOverview()">Overview</button>
+    <button (click)="getContact()">Contact Info</button>
+</p>
+<router-outlet></router-outlet>
+
 <div *ngIf="course!=undefined">
-<button (click)="previous()">Previous</button>
-<button (click)="next()">Next</button>
-<table class="course-table">
-    <tr>
-        <td>Course ID</td>
-        <td>{{course.courseId}}</td>
-    </tr>
-    <tr>
-        <td>Slots</td>
-        <td>{{course.slots}}</td>
-    </tr>
-    <tr>
-        <td>Course Name</td>
-        <td>{{course.courseName}}</td>
-    </tr>
-    <tr>
-        <td>Duration</td>
-        <td>{{course.courseId}}</td>
-    </tr>
-</table>
+    <button (click)="previous()">Previous</button>
+    <button (click)="next()" [disabled]="isNextDisabled">Next</button>
+    <table class="course-table">
+        <tr>
+            <td>Course ID</td>
+            <td>{{course.courseId}}</td>
+        </tr>
+        <tr>
+            <td>Slots</td>
+            <td>{{course.slots}}</td>
+        </tr>
+        <tr>
+            <td>Course Name</td>
+            <td>{{course.courseName}}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td>{{course.courseId}}</td>
+        </tr>
+    </table>
 </div>
+<button (click)="gotoCourseList()">Back</button>

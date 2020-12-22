@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../course';
 import { CourseService } from '../course.service';
 
@@ -11,13 +11,27 @@ import { CourseService } from '../course.service';
 export class CourseListComponent implements OnInit {
   courseList:Course[]=[];
 
-  constructor(private _service:CourseService,private router:Router) { }
+  public selectedId:number;
+  constructor(private _service:CourseService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params)=>{
+      this.selectedId=parseInt(params.get('id'));
+    }
+
+    );
     this._service.getCourseList().subscribe(data=>this.courseList=data);
   }
 
   public getCourseDetails(id:number){
     this.router.navigate(["/details",id]);
   }
+
+  public isSelected(id:number){
+    console.log(id);
+    let test:boolean=this.selectedId===id;
+    console.log(test);
+    return test;
+  }
+  
 }

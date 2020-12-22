@@ -10,6 +10,7 @@ import { CourseService } from '../course.service';
 })
 export class CourseDetailsComponent implements OnInit {
   course: Course;
+  isNextDisabled=false;
   constructor(private _service: CourseService, private route: ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,5 +30,20 @@ export class CourseDetailsComponent implements OnInit {
   public next(){
     let nextId=this.course.courseId+1;
     this.router.navigate(["/details",nextId]);
+    
+  }
+
+  public getOverview(){
+    this.router.navigate(["overview"],{relativeTo:this.route});
+  }
+
+  public getContact(){
+    this.router.navigate(["contact"],{relativeTo:this.route});
+  }
+
+  gotoCourseList(){
+    let selectedId=this.course.courseId;
+    this.router.navigate(["/courselist",{id:selectedId}]);
+   // this.router.navigate(["../",{id:selectedId}],{relativeTo:this.route});
   }
 }
